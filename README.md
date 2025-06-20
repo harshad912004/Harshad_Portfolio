@@ -46,10 +46,13 @@ Designed for recruiters, collaborators, and fellow tech enthusiasts.
 📦 Portfolio Repo  
 ┣ 📂 Certificates  
 ┣ 📂 Projects  
+┣ 📂 Testimonials  
 ┣ HD_Photo.jpg  
 ┣ logo.png  
 ┣ Harshad_Resume.pdf  
 ┣ index.html  
+┣ script.js  
+┣ style.js  
 
 ---
 
