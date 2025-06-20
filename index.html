@@ -9,45 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js"></script>
+
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  
-  <script>
-    //Dark-White Mode
-    function myFunction() {
-      var element = document.body;
-      element.classList.toggle("white-mode");
-    }
-  </script>
-
-  <style>
-    .white-mode {
-      background-color: white;
-      color: black;
-    }
-
-    /* Fade Animation Styles */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .animate-fade-in-down {
-      animation: fadeInDown 1.5s ease-out forwards;
-    }
-    .animate-fade-in-up {
-      animation: fadeInUp 1.5s ease-out forwards;
-    }
-    .animate-fade-in {
-      animation: fadeIn 2s ease-out forwards;
-    }
-  </style>
 </head>
 
 <body class="bg-gray-900 text-white font-sans">
@@ -186,7 +152,7 @@
   </section>
 
   <hr class="mt-4 mb-8 border-t-2 w-11/12 mx-auto">
-  
+
   <!-- Qualification Section -->
   <section id="qualification" class="py-20 px-7">
     <div class="max-w-4xl mx-auto">
@@ -222,132 +188,110 @@
   <section id="projects" class="py-20 px-6">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-5xl font-bold text-center mb-12" data-aos="fade-down">Projects</h2>
-      <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
-        <!-- Project Card 1: Mental Health Analysis - Healthcare -->
-        <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg overflow-hidden" data-aos="flip-right">
-          <img src="Projects/Healthcare_Dashboard.png" alt="Mental Health Dashboard" class="w-full h-48 object-fit border border-green-600">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-red-600 dark:text-red-400 mb-2">Mental Health Analysis – Healthcare</h3>
-            <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
-              The Mental Health Analysis - Healthcare project uses Python for data processing and Microsoft Power BI for visualization.
-              It includes data collection, cleaning, validation, and in-depth analysis. The Power BI dashboard showcases key mental health metrics like stress, sleep, satisfaction, and workload among doctors and patients.
-              Using advanced visual tools and measures, it offers impactful insights ideal for healthcare sector analysis and data storytelling.
-            </p>
-            <hr class="mt-2 mb-2 border-t-2 border-green-600 w-12/12 mx-auto">
-            <p class="text-sm text-green-600 dark:text-green-400 mb-4 ">Tech Stack: Python, Microsoft Power BI</p>
-            <div class="flex space-x-4">
-              <a href="https://harshad912004.github.io/Mental_Health_Analysis-Healthcare/" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-blue-600 hover:underline">🔗 Live Demo</a>
-              <a href="https://github.com/harshad912004/Mental_Health_Analysis-Healthcare" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-gray-600 hover:underline">💻 GitHub Repo</a>
+      <div class="relative">
+        <!-- Left Button -->
+        <button onclick="scrollProjects(-1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center z-10 shadow hover:bg-red-700">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!-- Slider -->
+        <div id="projectsSlider" class="flex gap-10 overflow-x-auto scroll-smooth py-4 px-4 scrollbar-hide">
+          <!-- Card 1: Mental Health Analysis - Healthcare -->
+          <div class="flex-shrink-0 w-80 h-70 bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg flex flex-col" data-aos="flip-right">
+            <img src="Projects/Healthcare_Dashboard.png" alt="Mental Health Dashboard" class="w-full h-64 object-fit border border-green-600 rounded-t-lg">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-red-600 dark:text-red-400">Mental Health Analysis - Healthcare</h3>
+              <p class="text-sm text-gray-700 dark:text-gray-300 mb-3">Power BI + Python project on mental health indicators</p>
+              <div class="flex space-x-3 text-sm">
+                <a href="https://harshad912004.github.io/Mental_Health_Analysis-Healthcare/" target="_blank" class="text-blue-600 hover:underline">🔗 Live Demo</a>
+                <a href="https://github.com/harshad912004/Mental_Health_Analysis-Healthcare" target="_blank" class="text-gray-600 hover:underline">💻 GitHub Repo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Hospital Patient Admission Analysis Dashboard -->
+          <div class="flex-shrink-0 w-80 h-70 bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg flex flex-col" data-aos="flip-right">
+            <img src="Projects/HAAD_Dashboard.png" alt="Hospital Patient Admission Analysis Dashboard" class="w-full h-64 object-fit border border-green-600 rounded-t-lg">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-red-600 dark:text-red-400">Hospital Patient Admission Analysis Dashboard</h3>
+              <p class="text-sm text-gray-700 dark:text-gray-300 mb-3">Excel-based dashboard analyzing patient admissions, and healthcare outcomes.</p>
+              <div class="flex space-x-3 text-sm">
+                <a href="https://harshad912004.github.io/Hospital_Patient_Admission_Analysis_Dashboard/" target="_blank" class="text-blue-600 hover:underline">🔗 Live Demo</a>
+                <a href="https://github.com/harshad912004/Hospital_Patient_Admission_Analysis_Dashboard" target="_blank" class="text-gray-600 hover:underline">💻 GitHub Repo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: E-commerce Product Retail Dashboard -->
+          <div class="flex-shrink-0 w-80 h-70 bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg flex flex-col" data-aos="flip-right">
+            <img src="Projects/EPRD.png" alt="E-commerce Product Retail Dashboard" class="w-full h-64 object-fit border border-green-600 rounded-t-lg">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-red-600 dark:text-red-400">E-commerce Product Retail Dashboard</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Excel dashboard visualizing sales trends, product categories, and revenue insights for retail analysis.</p>
+              <div class="flex space-x-3 text-sm mt-2">
+                <a href="https://harshad912004.github.io/Ecommerce_Product_Retail_Dashboard/" target="_blank" class="text-blue-600 hover:underline">🔗 Live Demo</a>
+                <a href="https://github.com/harshad912004/Ecommerce_Product_Retail_Dashboard" target="_blank" class="text-gray-600 hover:underline">💻 GitHub Repo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: CyberGuardian -->
+          <div class="flex-shrink-0 w-80 h-70 bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg flex flex-col" data-aos="flip-right">
+            <img src="Projects/Cyber_Guardian.png" alt="CyberGuardian" class="w-full h-64 object-fit border border-green-600 rounded-t-lg">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-red-600 dark:text-red-400">CyberGuardian</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Java full-stack platform offering cybersecurity tutorials, quizzes, and secure user management.</p>
+              <div class="flex space-x-3 text-sm mt-2">
+                <a href="https://harshad912004.github.io/Cyber_Guardian/" target="_blank" class="text-blue-600 hover:underline">🔗 Live Demo</a>
+                <a href="https://github.com/harshad912004/Cyber_Guardian" target="_blank" class="text-gray-600 hover:underline">💻 GitHub Repo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Care Connect -->
+          <div class="flex-shrink-0 w-80 h-70 bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg flex flex-col" data-aos="flip-right">
+            <img src="Projects/Care_Connect.png" alt="Care Connect" class="w-full h-64 object-fit border border-green-600 rounded-t-lg">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-red-600 dark:text-red-400">CareConnect</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Java-based web application streamlining healthcare appointment scheduling and patient management.</p>
+              <div class="flex space-x-3 text-sm mt-2">
+                <a href="https://harshad912004.github.io/Care-Connect/src/main/webapp/index.html" target="_blank" class="text-blue-600 hover:underline">🔗 Live Demo</a>
+                <a href="https://github.com/harshad912004/Care-Connect" target="_blank" class="text-gray-600 hover:underline">💻 GitHub Repo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Netflix Clone -->
+          <div class="flex-shrink-0 w-80 h-70 bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg flex flex-col" data-aos="flip-right">
+            <img src="Projects/Netflix_Clone.png" alt="Netflix Clone" class="w-full h-64 object-fit border border-green-600 rounded-t-lg">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-red-600 dark:text-red-400">Netflix Clone</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Responsive web app replicating Netflix UI with dynamic content display and smooth navigation.</p>
+              <div class="flex space-x-3 text-sm mt-2">
+                <a href="https://harshad912004.github.io/Netflix-Clone/" target="_blank" class="text-blue-600 hover:underline">🔗 Live Demo</a>
+                <a href="https://github.com/harshad912004/Netflix-Clone" target="_blank" class="text-gray-600 hover:underline">💻 GitHub Repo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Amazon Clone -->
+          <div class="flex-shrink-0 w-80 h-70 bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg flex flex-col" data-aos="flip-right">
+            <img src="Projects/Amazon_Clone.png" alt="Amazon Clone" class="w-full h-64 object-fit border border-green-600 rounded-t-lg">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-red-600 dark:text-red-400">Amazon Clone</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Responsive web app replicating Amazon UI with dynamic content display and smooth navigation.</p>
+              <div class="flex space-x-3 text-sm mt-2">
+                <a href="https://harshad912004.github.io/Amazon_Clone/" target="_blank" class="text-blue-600 hover:underline">🔗 Live Demo</a>
+                <a href="https://github.com/harshad912004/Amazon_Clone" target="_blank" class="text-gray-600 hover:underline">💻 GitHub Repo</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Card 2: Hospital Patient Admission Analysis Dashboard -->
-        <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg overflow-hidden" data-aos="flip-right">
-          <img src="Projects/HAAD_Dashboard.png" alt="Hospital Patient Admission Analysis Dashboard" class="w-full h-48 object-fit border border-green-600">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-red-600 dark:text-red-400 mb-2">Hospital Patient Admission Analysis Dashboard</h3>
-            <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
-              The Hospital Patient Admission Analysis Dashboard is an Excel-based project that offers visual insights into patient demographics, admission types, treatment outcomes, and key healthcare metrics like heart failure and chest infections.
-              It involves data collection, cleaning, validation, and analysis. Leveraging tools like Pivot Tables, Pivot Charts, and Conditional Formatting, the dashboard effectively supports clinical decision-making and storytelling in the healthcare domain.
-            </p>
-            <hr class="mt-2 mb-2 border-t-2 border-green-600 w-12/12 mx-auto">
-            <p class="text-sm text-green-600 dark:text-green-400 mb-4">Tech Stack: Microsoft Excel</p>
-            <div class="flex space-x-4">
-              <a href="https://harshad912004.github.io/Hospital_Patient_Admission_Analysis_Dashboard/" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-blue-600 hover:underline">🔗 Live Demo</a>
-              <a href="https://github.com/harshad912004/Hospital_Patient_Admission_Analysis_Dashboard" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-gray-600 hover:underline">💻 GitHub Repo</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 3: E-commerce Product Retail Dashboard -->
-        <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg overflow-hidden" data-aos="flip-right">
-          <img src="Projects/EPRD.png" alt="E-commerce Product Retail Dashboard" class="w-full h-48 object-fit border border-green-600">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-red-600 dark:text-red-400 mb-2">E-commerce Product Retail Dashboard</h3>
-            <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
-              The E-commerce Product Retail Dashboard is an Excel-based project that provides detailed insights into product sales, customer behavior, and country-wise performance.
-              Using the E-commerce Product Review dataset, it includes data collection, cleaning, validation, and analysis.
-              Advanced Excel tools like Pivot Tables, Pivot Charts, and Conditional Formatting are used for data visualization, delivering a clear and interactive dashboard to support informed business decisions.
-            </p>
-            <hr class="mt-2 mb-2 border-t-2 border-green-600 w-12/12 mx-auto">
-            <p class="text-sm text-green-600 dark:text-green-400 mb-4">Tech Stack: Microsoft Excel</p>
-            <div class="flex space-x-4">
-              <a href="https://harshad912004.github.io/Ecommerce_Product_Retail_Dashboard/" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-blue-600 hover:underline">🔗 Live Demo</a>
-              <a href="https://github.com/harshad912004/Ecommerce_Product_Retail_Dashboard" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-gray-600 hover:underline">💻 GitHub Repo</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 4: Cyber Guardian -->
-        <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg overflow-hidden" data-aos="flip-right">
-          <img src="Projects/Cyber_Guardian.png" alt="CyberGuardian" class="w-full h-48 object-fit border border-green-600">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-red-600 dark:text-red-400 mb-2">CyberGuardian</h3>
-            <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
-              Cyber Guardian is a Java-based full-stack web project developed using Java, JavaScript, HTML, CSS, Eclipse, and MySQL.
-              It offers cybersecurity tutorials with certificates, interactive quizzes, and chatbot support for guidance. Key features include a strong password generator, password strength analyzer, and secure user authentication.
-              With role-based access control for admins, users, and instructors, it ensures a safe and educational platform for learning cybersecurity.
-            </p>
-            <hr class="mt-2 mb-2 border-t-2 border-green-600 w-12/12 mx-auto">
-            <p class="text-sm text-green-600 dark:text-green-400 mb-4">Tech Stack: Java, JSP/Servlet, MySQL, HTML, CSS, JavaScript</p>
-            <div class="flex space-x-4">
-              <a href="https://harshad912004.github.io/Cyber_Guardian/" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-blue-600 hover:underline">🔗 Live Demo</a>
-              <a href="https://github.com/harshad912004/Cyber_Guardian" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-gray-600 hover:underline">💻 GitHub Repo</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 5: Care Connect -->
-        <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg overflow-hidden" data-aos="flip-right">
-          <img src="Projects/Care_Connect.png" alt="Care Connect" class="w-full h-48 object-fit border border-green-600">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-red-600 dark:text-red-400 mb-2">CareConnect</h3>
-            <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
-              The Care Connect is a Java-based web application designed to streamline hospital operations.
-              Built with Java, JavaScript, HTML, CSS, Eclipse, and MySQL, it provides role-based access control, ensuring secure logins for patients, doctors, and admins.
-              Key features include prescription management (with billing functionality), dedicated portals for patients and doctors, and an admin dashboard for efficient oversight, offering a comprehensive and user-friendly healthcare management solution.
-            </p>
-            <hr class="mt-2 mb-2 border-t-2 border-green-600 w-12/12 mx-auto">
-            <p class="text-sm text-green-600 dark:text-green-400 mb-4">Tech Stack: Java, JSP/Servlet, MySQL, HTML, CSS, JavaScript</p>
-            <div class="flex space-x-4">
-              <a href="https://harshad912004.github.io/Care-Connect/src/main/webapp/index.html" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-blue-600 hover:underline">🔗 Live Demo</a>
-              <a href="https://github.com/harshad912004/Care-Connect" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-gray-600 hover:underline">💻 GitHub Repo</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 6: Netflix Clone -->
-        <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg shadow-lg overflow-hidden" data-aos="flip-right">
-          <img src="Projects/Netflix_Clone.png" alt="Netflix Clone" class="w-full h-48 object-fit border border-green-600">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-red-600 dark:text-red-400 mb-2">Netflix Clone</h3>
-            <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">
-              The Responsive Netflix Clone is a dynamic web project built using JavaScript, HTML, and CSS.
-              It replicates the core features of Netflix, including sections like "Trending Now" and "Only on Netflix" to showcase popular content.
-              With a "Plan to Your Needs" feature and "More Reasons to Join," it engages users effectively.
-              The stylish footer enhances navigation, ensuring a seamless and responsive user experience across devices.
-            </p>
-            <hr class="mt-2 mb-2 border-t-2 border-green-600 w-12/12 mx-auto">
-            <p class="text-sm text-green-600 dark:text-green-400 mb-4">Tech Stack: HTML, CSS, JavaScript</p>
-            <div class="flex space-x-4">
-              <a href="https://harshad912004.github.io/Netflix-Clone/" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-blue-600 hover:underline">🔗 Live Demo</a>
-              <a href="https://github.com/harshad912004/Netflix-Clone" target="_blank" rel="noopener noreferrer"
-                class="text-sm font-medium text-gray-600 hover:underline">💻 GitHub Repo</a>
-            </div>
-          </div>
-        </div>
+        <!-- Right Button -->
+        <button onclick="scrollProjects(1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center z-10 shadow hover:bg-red-700">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </section>
@@ -445,8 +389,9 @@
         
         <!-- Testimonial Card 1 -->
         <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg overflow-hidden shadow-lg p-6 text-right transition duration-300" data-aos="flip-down">
-          <img src="HD_Photo.jpg" alt="Teacher 1" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
-          <p class="text-sm text-center text-gray-600 dark:text-gray-400">"I’ve seen Harshad grow into a skilled and confident developer who isn’t afraid to explore new technologies.
+          <img src="Testimonials/P_Jadhav_Sir.jpg" alt="Teacher 1" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
+          <p class="text-sm text-center text-gray-600 dark:text-gray-400">
+            "I’ve seen Harshad grow into a skilled and confident developer who isn’t afraid to explore new technologies.
             His work ethic and integrity are impressive."</p><br>
           <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Prof. P. D. Jadhav</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400">Professor of Masters of Computer Application</p>
@@ -455,8 +400,9 @@
 
         <!-- Testimonial Card 2 -->
         <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg overflow-hidden shadow-lg p-6 text-right transition duration-300" data-aos="flip-down">
-          <img src="HD_Photo.jpg" alt="Teacher 2" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
-          <p class="text-sm text-center text-gray-600 dark:text-gray-400">"Harshad shows a rare balance of technical mastery and a willingness to help peers.
+          <img src="Testionials/M_Khond_Maam.jpg" alt="Teacher 2" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
+          <p class="text-sm text-center text-gray-600 dark:text-gray-400">
+            "Harshad shows a rare balance of technical mastery and a willingness to help peers.
             His passion for problem-solving sets him apart."</p><br>
           <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Prof. M. Khond</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400">Professor of Masters of Computer Application</p>
@@ -465,8 +411,9 @@
 
         <!-- Testimonial Card 3 -->
         <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg overflow-hidden shadow-lg p-6 text-right transition duration-300" data-aos="flip-down">
-          <img src="HD_Photo.jpg" alt="Teacher 3" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
-          <p class="text-sm text-center text-gray-600 dark:text-gray-400">"Harshad’s enthusiasm for technology, especially in full-stack development and data analysis, is inspiring.
+          <img src="Testimonials/J_Attar_Sir.jpg" alt="Teacher 3" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
+          <p class="text-sm text-center text-gray-600 dark:text-gray-400">
+            "Harshad’s enthusiasm for technology, especially in full-stack development and data analysis, is inspiring.
             He brings creativity and precision to every task he undertakes."</p><br>
           <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Prof. J. Attar</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400">Professor of Masters of Computer Application</p>
@@ -475,8 +422,9 @@
 
         <!-- Testimonial Card 4 -->
         <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg overflow-hidden shadow-lg p-6 text-right transition duration-300" data-aos="flip-down">
-          <img src="HD_Photo.jpg" alt="Teacher 4" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
-          <p class="text-sm text-center text-gray-600 dark:text-gray-400">"It’s rare to encounter a student like Harshad, who combines technical proficiency with excellent communication and leadership skills.
+          <img src="Testimonials/M_Khan_Sir.jpg" alt="Teacher 4" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
+          <p class="text-sm text-center text-gray-600 dark:text-gray-400">
+            "It’s rare to encounter a student like Harshad, who combines technical proficiency with excellent communication and leadership skills.
             He is always eager to learn and take on challenges."</p><br>
           <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Prof. M. Khan</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400">Professor of Masters of Computer Application</p>
@@ -485,18 +433,20 @@
 
         <!-- Testimonial Card 5 -->
         <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg overflow-hidden shadow-lg p-6 text-right transition duration-300" data-aos="flip-down">
-          <img src="HD_Photo.jpg" alt="Teacher 5" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
-          <p class="text-sm text-center text-gray-600 dark:text-gray-400">"Harshad has consistently demonstrated exceptional dedication, analytical thinking, and technical expertise in both his academic and project work.
+          <img src="Testimonials/P_Malani_Sir.jpg" alt="Teacher 5" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
+          <p class="text-sm text-center text-gray-600 dark:text-gray-400">
+            "Harshad has consistently demonstrated exceptional dedication, analytical thinking, and technical expertise in both his academic and project work.
             His ability to quickly grasp complex concepts and deliver results is truly commendable."</p><br>
           <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Prof. P. Malani</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400">Professor of Masters of Computer Science</p>
-          <p class="text-sm text-gray-600 dark:text-gray-400">At K.K.Wagh Institute Of Computer Science</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">At K.K.Wagh Agriculture College</p>
         </div>
 
         <!-- Testimonial Card 6 -->
         <div class="bg-white dark:bg-gray-800 border border-green-600 rounded-lg overflow-hidden shadow-lg p-6 text-right transition duration-300" data-aos="flip-down">
-          <img src="HD_Photo.jpg" alt="Teacher 6" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
-          <p class="text-sm text-center text-gray-600 dark:text-gray-400">"Harshad is a focused and motivated learner who has impressed us with his innovative solutions and collaborative spirit.
+          <img src="Testimonials/Y_Sonawane_Maam.jpg" alt="Teacher 6" class="w-24 h-24 mx-auto rounded-full mb-4 object-fit border border-green-600">
+          <p class="text-sm text-center text-gray-600 dark:text-gray-400">
+            "Harshad is a focused and motivated learner who has impressed us with his innovative solutions and collaborative spirit.
             His contributions to class projects have always stood out."</p><br>
           <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Ass. Prof. Y. Sonawane</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400">Professor of Masters of Computer Application</p>
@@ -602,27 +552,24 @@
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <button onclick="scrollToTop()" id="backToTop"
+      class="fixed bottom-5 right-5 w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center shadow-lg transition duration-300 z-50">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+  </button>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Animation to -->
   <script>
     AOS.init({
       duration: 1500,
     });
   </script>
 
-  <!-- Back to Top Button -->
-  <button onclick="scrollToTop()" id="backToTop"
-    class="fixed bottom-5 right-5 w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center shadow-lg transition duration-300 z-50">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-    </svg>
-  </button>
-
-  <script>
-    particlesJS.load('particles-js', 'particles.json', function () {
-      console.log('particles.js loaded');
-    });
-  </script>
-
+  <!-- Particles Background Animation -->
   <script>
     particlesJS('particles-js',
     {
@@ -668,35 +615,47 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
   <!-- Chart Init -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var ctx = document.getElementById('skillsChart').getContext('2d');
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Java', 'Python', 'SQL', 'Power BI', 'Excel', 'Tableau'],
-            datasets: [{
-              label: 'Confidence (%)',
-              data: [75, 85, 80, 80, 90, 70],
-              backgroundColor: 'rgba(220, 38, 38, 0.7)',
-              borderColor: 'rgba(220, 38, 38, 1)',
-              borderWidth: 1
-            }]
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var ctx = document.getElementById('skillsChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Java', 'Python', 'SQL', 'Power BI', 'Excel', 'Tableau'],
+          datasets: [{
+            label: 'Confidence (%)',
+            data: [75, 85, 80, 80, 90, 70],
+            backgroundColor: 'rgba(220, 38, 38, 0.7)',
+            borderColor: 'rgba(220, 38, 38, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          animation: {
+            duration: 1500,
+            easing: 'easeOutBounce'
           },
-          options: {
-            animation: {
-              duration: 1500,
-              easing: 'easeOutBounce'
-            },
-            scales: {
-              y: {
-                beginAtZero: true,
-                max: 100
-              }
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100
             }
           }
-        });
+        }
       });
-    </script>
+    });
+  </script>
+
+  <!-- Scroll-Project Side Button -->
+  <script>
+    function scrollProjects(direction) {
+      const slider = document.getElementById("projectsSlider");
+      slider.scrollBy({
+        left: 320 * direction,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
 </body>
 </html>
