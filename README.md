@@ -93,4 +93,4 @@ All the amazing open-source tools used
 
 ---
 
-✨ Built by Harshad Dhongade
+✨ Built by **Harshad Dhongade**
